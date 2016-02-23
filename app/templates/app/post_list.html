@@ -11,15 +11,12 @@
         </div>
 
         <div>
-            <h2><a href="">My first post</a></h2>
-            <p>This is my first post in this blog</p>
-            <h6>published: 23.02.2015, 16:23</h6>
+            {% for post in posts %}
+                <h2><a href=""> {{post.title}} </a></h2>
+                <p>{{post.text|linebreaks}}</p>
+                <h6>published: {{post.published_date}}</h6>
+            {% endfor %}
         </div>
 
-        <div>
-            <h2><a href="">My second post</a></h2>
-            <p>this the newest post from soft catalyst</p>
-            <h6>published: 23.02.2015, 16:37</h6>
-        </div>
 </body>
 </html>
