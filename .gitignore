@@ -4,5 +4,9 @@ VirEnv
 db.sqlite3
 /static
 .DS_Store
-/bin
-/obj
+bin
+obj
+ptvs_virtualenv_proxy.py
+readme.mht
+SoftCatalystBlog.pyproj
+SoftCatalystBlog - Shortcut.lnk
