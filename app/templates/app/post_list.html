@@ -1,22 +1,13 @@
-﻿<!DOCTYPE html>
+﻿{% extends 'app/base.html' %}
 
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="utf-8" />
-    <title></title>
-</head>
-<body>
-        <div>
-            <h1><a href="">SoftCatalyst Blog</a></h1>
+{% block content %}
+    {% for post in posts %}
+        <div class="post">
+            <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaks }}</p>
+            <div class="date">
+                <p>published: {{ post.published_date }}</p>
+            </div>
         </div>
-
-        <div>
-            {% for post in posts %}
-                <h2><a href=""> {{post.title}} </a></h2>
-                <p>{{post.text|linebreaks}}</p>
-                <h6>published: {{post.published_date}}</h6>
-            {% endfor %}
-        </div>
-
-</body>
-</html>
+    {% endfor %}
+{% endblock %}
